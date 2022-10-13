@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikromehanika</title>
+    <script src="https://kit.fontawesome.com/3d5e7cdc6f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital@0;1&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+<body>
+
+    <div id="naslov_stranice">
+        Mikromehanika kompozitnih materijala
+    </div>
+
+    <div id="gray_background" class="hidden"> </div>
+
+
+    <!-- PRIKAZ BAZE POPUP -->
+
+    <!-- DEFINISANJE NOVOG VLAKNA POPUP -->
+    <div id="definisanje_novog_vlakna" class="hidden">
+
+
+        <div id="novo_vlakno_naslov"> Definisanje novog vlakna</div>
+
+        <div id="naziv_vlakna_novo" class="vlakno_osobine_novo"> <span id="specijalni_span">Naziv</span>
+            <input type="text" name="vlakno_popup" id="input_text_vlakno_novo">
+        </div>
+
+        <div id="rho_f_novo" class="vlakno_osobine_novo"> <span>rho</span> <input type="number" name="vlakno_popup"
+                id="rho_f_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo" id="jedinica_gustina_dodavanje">$$\frac{g}{cm^3}$$</div>
+        </div>
+
+
+
+        <div id="Ef1_novo" class="vlakno_osobine_novo"> <span>E<sub>f1</sub></span> <input type="number"
+                name="vlakno_popup" id="Ef1_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">GPa</div>
+        </div>
+
+        <div id="Ef2_novo" class="vlakno_osobine_novo"> <span>E<sub>f2</sub></span> <input type="number"
+                name="vlakno_popup" id="Ef2_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">GPa</div>
+        </div>
+
+        <div id="Gf12_novo" class="vlakno_osobine_novo"> <span>G<sub>f12</sub> </span> <input type="number"
+                name="vlakno_popup" id="Gf12_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">GPa</div>
+        </div>
+
+
+        <div id="Gf23_novo" class="vlakno_osobine_novo"> <span>G<sub>f23</sub></span> <input type="number"
+                name="vlakno_popup" id="Gf23_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">GPa</div>
+        </div>
+
+        <div id="FfT_novo" class="vlakno_osobine_novo"> <span>F<sub>fT</sub></span> <input type="number"
+                name="vlakno_popup" id="FfT_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">MPa</div>
+        </div>
+
+
+        <div id="FfC_novo" class="vlakno_osobine_novo"> <span>F<sub>fC</sub></span> <input type="number"
+                name="vlakno_popup" id="FfC_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">MPa</div>
+        </div>
+
+
+        <div id="epsf1T_novo" class="vlakno_osobine_novo"> <span>&epsilon;<sub>f1T</sub></span> <input type="number"
+                name="vlakno_popup" id="epsf1T_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">%</div>
+        </div>
+
+
+        <div id="epsf1C_novo" class="vlakno_osobine_novo"> <span>&epsilon;<sub>f1C</sub></span> <input type="number"
+                name="vlakno_popup" id="epsf1C_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">%</div>
+        </div>
+
+
+
+
+        <div id="nif12_novo" class="vlakno_osobine_novo"> <span>ni<sub>f12</sub></span> <input type="number"
+                name="vlakno_popup" id="nif12_novo_input" class="input_za_vlakno_novo">
+            <div class="jedinice_novo">---</div>
+        </div>
+
+
+
+        <div id="dugme_novo_vlakno" class="vlakno_osobine_novo"> <span>Save</span>
+        </div>
+
+
+        <div id="zatvoriti_definisanje_vlakna"><i class="fa-solid fa-square-xmark" id="zatvoriti_definisanje_x"></i>
+        </div>
+    </div><!-- DEFINISANJE NOVOG VLAKNA POPUP -->
+
+
+    <!-- DEFINISANJE NOVE MATRICE POPUP -->
+    <div id="definisanje_nove_matrice" class="hidden">
+
+
+        <div id="nova_matrica_naslov"> Definisanje nove matrice</div>
+
+
+        <div id="naziv_matrice_novo" class="matrica_osobine_novo"> <span id="specijalni_span_matrice">Naziv</span>
+            <input type="text" name="" id="input_text_matrica_novo">
+        </div>
+
+        <div id="rho_m_novo" class="matrica_osobine_novo"> <span>rho</span> <input type="number" name=""
+                id="rho_m_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo" id="jedinica_gustina_dodavanje">$$\frac{g}{cm^3}$$</div>
+        </div>
+
+        <div id="Em_novo" class="matrica_osobine_novo"> <span>E<sub>m</sub></span> <input type="number" name=""
+                id="Em_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo">GPa</div>
+        </div>
+
+        <div id="Gm_novo" class="matrica_osobine_novo"> <span>G<sub>m</sub></span> <input type="number" name=""
+                id="Gm_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo">GPa</div>
+        </div>
+
+        <div id="FmT_novo" class="matrica_osobine_novo"> <span>F<sub>mT</sub> </span> <input type="number" name=""
+                id="FmT_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo">MPa</div>
+        </div>
+
+
+        <div id="FmC_novo" class="matrica_osobine_novo"><span>F<sub>mC</sub> </span> <input type="number" name=""
+                id="FmC_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo">MPa</div>
+        </div>
+
+
+        <div id="FmS_novo" class="matrica_osobine_novo"><span>F<sub>mS</sub> </span><input type="number" name=""
+                id="FmS_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo">MPa</div>
+        </div>
+
+
+        <div id="eps_mu_novo" class="matrica_osobine_novo"> <span>&epsilon;<sub>mu</sub></span> <input type="number"
+                name="" id="eps_mu_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo">%</div>
+        </div>
+
+        <div id="ni_m_novo" class="matrica_osobine_novo"> <span>ni<sub>m</sub></span> <input type="number" name=""
+                id="ni_m_novo_input" class="input_za_matricu_novo">
+            <div class="jedinice_novo"></div>
+        </div>
+
+
+        <div id="dugme_nova_matrica" class="matrica_osobine_novo"> <span>Save</span>
+        </div>
+
+
+
+        <div id="zatvoriti_definisanje_matrice"><i class="fa-solid fa-square-xmark" id="zatvoriti_definisanje_x"></i>
+            <!-- DEFINISANJE NOVE MATRICE POPUP -->
+        </div>
+    </div>
+
+
+
+    <main id="main">
+        <!--                                                             
+            PRIPREMA                                            -->
+
+        <div id="priprema" class="flip-card">
+            <!--PRIPREMA FLIP FRONT -->
+            <div class="flip-card-inner" id="priprema_flip">
+                <div class="flip-card-front">
+
+                    <header id="definisanje_materijala"> DEFINISANJE MATERIJALA</header>
+
+                    <div id="VMZZ">
+                        <div id="vlakno">
+
+                            <span id="vlakno_span">Vlakno</span>
+                            <div class="dropdown_vlakno">
+                                <div id="dodati_vlakno"><i class="far fa-plus-square"></i></div>
+                                <div id="strelica_vlakno"><i class="fa-solid fa-angle-down"></i></div>
+                                <div onclick="dropdown_function_vlakno()" class="dropbtn" id="selektovano_vlakno">
+                                </div>
+                                <div id="myDropdown_vlakno" class="dropdown-content">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div id="matrica">
+                            <span id="matrica_span">Matrica</span>
+                            <div class="dropdown_matrica">
+                                <div id="dodati_matricu"><i class="far fa-plus-square"></i></div>
+                                <div id="strelica_matrica"><i class="fa-solid fa-angle-down"></i></div>
+                                <div onclick="dropdown_function_matrica()" class="dropbtn" id="selektovana_matrica">
+                                </div>
+                                <div id="myDropdown_matrica" class="dropdown-content">
+                                </div>
+                            </div>
+
+                            <div class="hidden" id="matrica_question">
+                            </div>
+                        </div>
+
+                        <div id="zapreminski_udeo_vlakna"> <span id="zapreminski_udeo_vlakna_span">Zapreminski udeo
+                                vlakna</span>
+                            <input type="number" name="zapreminski_udeo_vlakna" id="zapreminski_udeo_vlakna_id" max="1"
+                                min="0" step="0.01" value="0.6">
+                        </div>
+
+                        <div id="zapreminski_udeo_praznina">
+                            <span id="zapreminski_udeo_praznina_span">Zapreminski udeo praznina</span>
+                            <input type="number" name="zapreminski_udeo_praznina" id="zapreminski_udeo_praznina_id"
+                                min="0.0" step="0.01" value="0.0">
+                        </div>
+                        <div class="information">
+
+                            <div id="E1_objasnjenje" class="hidden E_objasnjenja">
+                                Pravilo mešanja
+                                $$ E_1 = E_f^1 V_f + E_m V_m \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+                                \ \ \ \ \ \ $$
+                                Model Hashin-Rozen
+                                $$E_1 = E_f^1 V_f + E_m V_m + \frac{4V_f V_m (\nu_f-\nu_m)^2}{\frac{V_f}{K_m} +
+                                \frac{1}{G_m}+\frac{V_m}{K_f}}$$
+                            </div>
+
+                            <div id="E2_objasnjenje" class="hidden E_objasnjenja">
+                                <br>
+                                Inverzno pravilo mešanja &nbsp; &nbsp; &nbsp;&nbsp;Modifikovana teorija mešanja
+
+                                <p id="inverzno_smanjenje">$$ E_2 = \frac{E_2^f E_m}{E_mV_f+E_2^fV_m} \ \ \ \ \ \ \
+                                    \frac{1}{E_2} =
+                                    \frac{\frac{V_f}{E_2^f}+\frac{\eta V_m}{E_m}}{V_f+\eta V_m}$$</p>
+
+
+                                Model Chamis-a &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Model Halpin-Tsai
+
+                                <p id="chamis_smanjenje">$$ E_2 = \frac{E_m}{1-\sqrt{V_f}\left( 1-
+                                    \frac{E_m}{E_2^f}\right)} \ \ \ \ \ E_2 = \frac{E_m\left( (1+V_f)E_{f2}+V_mE_m
+                                    \right)}{V_mE_{f2}+(1+V_f)E_m} $$
+                                </p>
+                            </div>
+
+                            <div id="G12_objasnjenje" class="hidden E_objasnjenja">
+
+                                <br>
+                                Pravilo mešanja &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                Model Hashin-Rosen
+
+                                <p id="pravilo_mesanja_G12">
+                                    $$ G_{12} = \frac{G_{12}^f+G_m}{V_fG_m+V_mG_{12}^f} \ \ \ \ \ \ \ G_{12} = G_m
+                                    \frac{G_{12}^f(1+V_f)+G_mV_m}{G_{12}^fV_m+G_m(1+V_f)}$$</p>
+                                Model Halpin-Tsai &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;Model Chamis-a
+                                <p id="chamis_smanjenje_G12">$$G_{12} =
+                                    G_m\left(\frac{1+2\xi V_f}{1-\xi V_f}\right) \ \ \ \ \ \ G_{12} =
+                                    \frac{G_m}{1-\sqrt{V_f}\left( 1-
+                                    \frac{G_m}{G_{12}^f}\right)} \ \ \ \ \ \ \ \ $$
+                                </p>
+                            </div>
+
+                            <div id="F1T_objasnjenje" class="hidden E_objasnjenja">
+                                <br>
+                                $$\varepsilon_{ft}^u \lt \varepsilon_{mt}^u \rightarrow F_{1T} = F_{ft}\left( V_f +
+                                \frac{E_m}{E_f}V_m \right)$$
+                                $$\varepsilon_{ft}^u \gt \varepsilon_{mt}^u \rightarrow F_{1T} = F_{mt}\left( V_f
+                                \frac{E_f}{E_m} + V_m \right)$$
+                            </div>
+
+                            <div id="F1C_objasnjenje" class="hidden E_objasnjenja">
+                                <br>
+                                $$
+                                V_f\lt 0.2 \rightarrow F_{1C} = 2V_f\left(
+                                \frac{V_fE_fE_m}{3(1-V_f)} \right) ^{1/2} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+                                $$$$
+                                V_f\gt 0.2 \rightarrow F_{1C} =
+                                \frac{(E_fV_f+E_mV_m)\left(1-V_f^{1/3}\right)\varepsilon_m^u}{\nu_f V_f+\nu_m V_m}$$
+                            </div>
+
+
+                            <div id="F2T_objasnjenje" class="hidden E_objasnjenja">
+                                <p>Model Nielsen-a</p>
+                                <p class="smanjenje_f2T">
+                                    $$
+                                    F_{2T} = \frac{E_2 F_m}{E_m}(1-V_f^{1/3}) \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+                                    \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+                                    $$</p>
+                                <p>Model Barbera</p>
+                                <p class="smanjenje_f2T">
+                                    $$
+                                    F_{2T} = F_m C_V \left[ 1+ \left( V_f-V_f^{1/2}\right)\left( 1-\frac{E_m}{E_{fT}}
+                                    \right) \right]
+                                    $$
+                                </p>
+                            </div>
+
+                            <div id="F2C_objasnjenje" class="hidden E_objasnjenja">
+                                <br>
+                                <p>Formula Weeton-a</p>
+                                <p class="smanjenje_f2C">
+                                    $$
+                                    F_{2C} = F_{mc}C_V \left[1+\left(V_f-V_f^{1/2}\right) \left(
+                                    1-\frac{E_m}{E_{fT}}\right) \right] \ \ \ \
+                                    $$</p>
+                            </div>
+                            <div id="F6_objasnjenje" class="hidden E_objasnjenja">
+                                <br>
+                                <p>Formula Stellbrink-a</p>
+                                <p class="smanjenje_f2C">
+                                    $$
+                                    F_6 = F_{ms}C_V \left[ 1+\left( V_f - V_f^{1/2}\right) \left( 1-\frac{G_m}{G_f}
+                                    \right) \right] \ \ \ \ \ \ \ \ \
+                                    $$</p>
+                            </div>
+
+
+                            <img src="images/logo.png" alt="logo" id="objasnjenja_slike">
+
+                        </div>
+                        <div class="information2">
+                            <div class="hidden"> <img src="" alt=""></div>
+                            <img src="images/logo.png" alt="logo" id="logo">
+                        </div>
+                    </div>
+
+                    <div id="matrica_i_vlakno_direktno_box">
+                        <div id="matrica_i_vlakno_direktno">
+                            <div id="vlakno_osobine_direktno_id">
+
+                                <div id="vlakno_direktno">
+                                    Vlakno
+                                </div>
+
+                                <div id="Ef1_direktno" class="vlakno_osobine_direktno"> <span>E <sub>f1</sub></span>
+                                    <input type="number" name="" id="Ef1_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice">GPa</div>
+                                </div>
+
+                                <div id="Ef2_direktno" class="vlakno_osobine_direktno"> <span>E<sub>f2</sub></span>
+                                    <input type="number" name="" id="Ef2_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice">GPa</div>
+                                </div>
+
+
+                                <div id="Gf12_direktno" class="vlakno_osobine_direktno"> <span>G<sub>f12</sub></span>
+                                    <input type="number" name="" id="Gf12_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice">GPa</div>
+                                </div>
+
+
+                                <div id="Gf23_direktno" class="vlakno_osobine_direktno"> <span>G<sub>f23</sub></span>
+                                    <input type="number" name="" id="Gf23_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice">GPa</div>
+                                </div>
+
+
+                                <div id="FfT_direktno" class="vlakno_osobine_direktno"> <span>F<sub>fT</sub></span>
+                                    <input type="number" name="" id="FfT_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice">MPa</div>
+                                </div>
+
+
+                                <div id="FfC_direktno" class="vlakno_osobine_direktno"> <span>F<sub>fC</sub></span>
+                                    <input type="number" name="" id="FfC_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice">MPa</div>
+                                </div>
+
+
+                                <div id="epsf1T_direktno" class="vlakno_osobine_direktno">
+                                    <span>&epsilon;<sub>f1T</sub></span> <input type="number" name=""
+                                        id="epsf1T_direktno_input" class="input_za_vlakno_direktno">
+                                    <div class="jedinice">%</div>
+                                </div>
+
+
+                                <div id="epsf1C_direktno" class="vlakno_osobine_direktno">
+                                    <span>&epsilon;<sub>f1C</sub></span> <input type="number" name=""
+                                        id="epsf1C_direktno_input" class="input_za_vlakno_direktno">
+                                    <div class="jedinice">%</div>
+                                </div>
+
+                                <div id="nif12_direktno" class="vlakno_osobine_direktno"> <span>ni<sub>f12</sub></span>
+                                    <input type="number" name="" id="nif12_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div class="jedinice"></div>
+                                </div>
+
+
+                            </div>
+
+                            <div id="matrica_osobine_direktno_id">
+
+                                <div id="matrica_direktno">
+                                    Matrica
+                                </div>
+
+                                <div id="Em_direktno" class="matrica_osobine_direktno"> <span>E<sub>m</sub></span>
+                                    <input type="number" name="" id="Em_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div class="jedinice">GPa</div>
+                                </div>
+
+                                <div id="Gm_direktno" class="matrica_osobine_direktno"> <span>G<sub>m</sub></span>
+                                    <input type="number" name="" id="Gm_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div class="jedinice">GPa</div>
+                                </div>
+
+                                <div id="FmT_direktno" class="matrica_osobine_direktno"> <span>F<sub>mT</sub></span>
+                                    <input type="number" name="" id="FmT_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div class="jedinice">MPa</div>
+                                </div>
+
+                                <div id="FmC_direktno" class="matrica_osobine_direktno"> <span>F<sub>mC</sub></span>
+                                    <input type="number" name="" id="FmC_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div class="jedinice">MPa</div>
+                                </div>
+
+                                <div id="FmS_direktno" class="matrica_osobine_direktno"> <span>F<sub>mS</sub></span>
+                                    <input type="number" name="" id="FmS_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div class="jedinice">MPa</div>
+                                </div>
+
+                                <div id="eps_mu_direktno" class="matrica_osobine_direktno">
+                                    <span>&epsilon;<sub>mu</sub></span> <input type="number" name=""
+                                        id="eps_mu_direktno_input" class="input_za_matricu_direktno">
+                                    <div class="jedinice">%</div>
+                                </div>
+
+                                <div id="ni_m_direktno" class="matrica_osobine_direktno"> <span>ni<sub>m</sub></span>
+                                    <input type="number" name="" id="ni_m_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div class="jedinice"></div>
+                                </div>
+                                <div id="rho_matrica" class="matrica_osobine_direktno">
+                                    <span>rho_m</span>
+                                    <input type="number" name="" id="rho_m_direktno_input"
+                                        class="input_za_matricu_direktno">
+                                    <div id="jedinica_za_gustinu" class="jedinice">
+                                        $$\frac{g}{cm^3}$$</div>
+                                </div>
+
+                                <div id="rho_vlakna" class="vlakno_osobine_direktno">
+                                    <span>rho_f</span>
+                                    <input type="number" name="" id="rho_f_direktno_input"
+                                        class="input_za_vlakno_direktno">
+                                    <div id="jedinica_za_gustinu" class="jedinice">
+                                        $$\frac{g}{cm^3}$$</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="dodavanje_matrice_i_vlakna_direktno">
+
+                            <!-- dodavanje vlakna    -->
+                            <div id="dodavanje_vlakna_direktno">
+
+                                <div id="dodavanje_vlakna_input_div_direktno">
+                                    Naziv <input type="text" name="" id="dodavanje_vlakna_direktno_input">
+                                </div>
+
+                            </div>
+
+                            <div id="dugme_dodavanje_vlakna_direktno">
+                                DODATI VLAKNO <i class="fa-regular fa-square-plus"></i>
+                            </div>
+
+
+                            <!-- dodavanje matrice -->
+                            <div id="dodavanje_matrice_direktno">
+                                <div id="dodavanje_matrice_input_div_direktno">
+                                    Naziv <input type="text" name="" id="dodavanje_matrice_direktno_input">
+                                </div>
+                            </div>
+
+                            <div id="dugme_dodavanje_matrice_direktno">
+                                DODATI MATRICU <i class="fa-regular fa-square-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="direktno_definisanje_button">Definisanje materijala
+                    </div>
+                </div>
+                <!--PRIPREMA FLIP END -->
+                <!--PRIPREMA FLIP BACK -->
+                <div class="flip-card-back" id="priprema_flip_back">
+                    <header id="definisanje_materijala" class="definisanje_materijala_direktno"> DEFINISANJE MATERIJALA
+                    </header>
+
+                    <div id="matrica_i_vlakno_direktno">
+                        <div id="vlakno_osobine_direktno_id">
+
+                            <div id="vlakno_direktno">
+                                Vlakno
+                            </div>
+
+                            <div id="Ef1_direktno" class="vlakno_osobine_direktno"> <span>E <sub>f1</sub></span>
+                                <input type="number" name="" id="Ef1_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">GPa</div>
+                            </div>
+
+                            <div id="Ef2_direktno" class="vlakno_osobine_direktno"> <span>E<sub>f2</sub></span>
+                                <input type="number" name="" id="Ef2_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">GPa</div>
+                            </div>
+
+
+                            <div id="Gf12_direktno" class="vlakno_osobine_direktno"> <span>G<sub>f12</sub></span>
+                                <input type="number" name="" id="Gf12_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">GPa</div>
+                            </div>
+
+
+                            <div id="Gf23_direktno" class="vlakno_osobine_direktno"> <span>G<sub>f23</sub></span>
+                                <input type="number" name="" id="Gf23_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">GPa</div>
+                            </div>
+
+                            <div id="FfT_direktno" class="vlakno_osobine_direktno"> <span>F<sub>fT</sub></span>
+                                <input type="number" name="" id="FfT_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">MPa</div>
+                            </div>
+
+
+                            <div id="FfC_direktno" class="vlakno_osobine_direktno"> <span>F<sub>fC</sub></span>
+                                <input type="number" name="" id="FfC_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">MPa</div>
+                            </div>
+
+                            <div id="epsf1T_direktno" class="vlakno_osobine_direktno">
+                                <span>&epsilon;<sub>f1T</sub></span> <input type="number" name=""
+                                    id="epsf1T_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">%</div>
+                            </div>
+
+                            <div id="epsf1C_direktno" class="vlakno_osobine_direktno">
+                                <span>&epsilon;<sub>f1C</sub></span> <input type="number" name=""
+                                    id="epsf1C_direktno_input2" class="input_za_vlakno_direktno">
+                                <div class="jedinice">%</div>
+                            </div>
+
+                            <div id="nif12_direktno" class="vlakno_osobine_direktno"> <span>ni<sub>f12</sub></span>
+                                <input type="number" name="" id="nif12_direktno_input2"
+                                    class="input_za_vlakno_direktno">
+                                <div class="jedinice"></div>
+                            </div>
+
+
+                        </div>
+
+                        <div id="matrica_osobine_direktno_id">
+
+                            <div id="matrica_direktno">
+                                Matrica
+                            </div>
+
+                            <div id="Em_direktno" class="matrica_osobine_direktno"> <span>E<sub>m</sub></span>
+                                <input type="number" name="" id="Em_direktno_input2" class="input_za_matricu_direktno">
+                                <div class="jedinice">GPa</div>
+                            </div>
+
+                            <div id="Gm_direktno" class="matrica_osobine_direktno"> <span>G<sub>m</sub></span>
+                                <input type="number" name="" id="Gm_direktno_input2" class="input_za_matricu_direktno">
+                                <div class="jedinice">GPa</div>
+                            </div>
+
+                            <div id="FmT_direktno" class="matrica_osobine_direktno"> <span>F<sub>mT</sub></span>
+                                <input type="number" name="" id="FmT_direktno_input2" class="input_za_matricu_direktno">
+                                <div class="jedinice">MPa</div>
+                            </div>
+
+                            <div id="FmC_direktno" class="matrica_osobine_direktno"> <span>F<sub>mC</sub></span>
+                                <input type="number" name="" id="FmC_direktno_input2" class="input_za_matricu_direktno">
+                                <div class="jedinice">MPa</div>
+                            </div>
+
+                            <div id="FmS_direktno" class="matrica_osobine_direktno"> <span>F<sub>mS</sub></span>
+                                <input type="number" name="" id="FmS_direktno_input2" class="input_za_matricu_direktno">
+                                <div class="jedinice">MPa</div>
+                            </div>
+
+                            <div id="eps_mu_direktno" class="matrica_osobine_direktno">
+                                <span>&epsilon;<sub>mu</sub></span> <input type="number" name=""
+                                    id="eps_mu_direktno_input2" class="input_za_matricu_direktno">
+                                <div class="jedinice">%</div>
+                            </div>
+
+                            <div id="ni_m_direktno" class="matrica_osobine_direktno"> <span>ni<sub>m</sub></span>
+                                <input type="number" name="" id="ni_m_direktno_input2"
+                                    class="input_za_matricu_direktno">
+                                <div class="jedinice"></div>
+                            </div>
+
+                            <div id="rho_matrica_direktno" class="matrica_osobine_direktno">
+                                <span>rho_m</span>
+                                <input type="number" name="" id="rho_m_direktno_input2"
+                                    class="input_za_matricu_direktno">
+                                <div id="jedinica_za_gustinu" class="jedinice">
+                                    $$\frac{g}{cm^3}$$</div>
+                            </div>
+
+                            <div id="rho_vlakna_direktno" class="vlakno_osobine_direktno">
+                                <span>rho_f</span>
+                                <input type="number" name="" id="rho_f_direktno_input2"
+                                    class="input_za_vlakno_direktno">
+                                <div id="jedinica_za_gustinu" class="jedinice">
+                                    $$\frac{g}{cm^3}$$</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="dodavanje_matrice_i_vlakna_direktno">
+
+                        <!-- dodavanje vlakna    -->
+                        <div id="dodavanje_vlakna_direktno">
+
+                            <div id="dodavanje_vlakna_input_div_direktno">
+                                Naziv <input type="text" name="" id="dodavanje_vlakna_direktno_input2">
+                            </div>
+
+                        </div>
+
+                        <div id="dugme_dodavanje_vlakna_direktno2">
+                            DODATI VLAKNO <i class="fa-regular fa-square-plus"></i>
+                        </div>
+
+                        <!-- dodavanje matrice -->
+                        <div id="dodavanje_matrice_direktno">
+                            <div id="dodavanje_matrice_input_div_direktno">
+                                Naziv <input type="text" name="" id="dodavanje_matrice_direktno_input2">
+                            </div>
+                        </div>
+
+                        <div id="dugme_dodavanje_matrice_direktno2">
+                            DODATI MATRICU <i class="fa-regular fa-square-plus"></i>
+                        </div>
+                    </div>
+
+                    <div id="standardno_definisanje_button" class="standardno_definisanje_button">Nazad
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--                                                             
+            REZULTATI                                            -->
+
+        <div id="rezultati">
+            <!-- <header id="izbor_metoda_i_proracun"> IZBOR METODE I PRORACUN</header> -->
+            <div id="div_za_rotaciju_po_x" class="flip-card2">
+                <div id="div_za_rotaciju_po_x2" class="flip-card-inner flip_baza_prednji">
+                    <div id="rezultati_flex_div" class="flip-card-front">
+                        <div id="mehanicke_karakteristike">
+
+                            <div id="mehanicke_karakteristike_title">
+                                Mehaničke karakteristike
+                            </div>
+
+                            <div id="E1">
+                                <span id="E1_span"> E<sub>1</sub></span>
+                                <input type="number" class="resenje" id="resenje_E1"> GPa
+                                <div id="strelica_E1"><i class="fa-solid fa-angle-down"></i></div>
+                                <i class="fa-regular fa-circle-question " id="upitnik_E1"></i>
+                                <div class="dropdown_metode_E1">
+
+                                    <div onclick="dropdown_function_E1()" class="dropbtn" id="selektovana_metoda_E1">
+                                    </div>
+                                    <div id="myDropdown_E1" class="dropdown-content">
+                                        <a href="#" data-metode_E1_name="Pravilo mešanja ROM" name="metode_E1_name"
+                                            class="selected_E1 metode_E1">Pravilo mešanja
+                                            ROM</a>
+                                        <a href="#" data-metode_E1_name="Model Hashin-Rozen" name="metode_E1_name"
+                                            class=" metode_E1">Model Hashin-Rozen</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="E2">
+
+                                <span> E<sub>2</sub></span>
+                                <input type="number" class="resenje" id="resenje_E2"> GPa
+                                <div id="strelica_E2"><i class="fa-solid fa-angle-down"></i></div>
+                                <i class="fa-regular fa-circle-question " id="upitnik_E2"></i>
+                                <div class="dropdown_metode_E2">
+
+                                    <div onclick="dropdown_function_E2()" class="dropbtn" id="selektovana_metoda_E2">
+                                    </div>
+                                    <div id="myDropdown_E2" class="dropdown-content">
+                                        <a href="#" name="metode_E2_name" data-metode_E2_name="Inverzno pravilo mesanja"
+                                            class="selected_E2 metode_E2">Inverzno pravilo mešanja</a>
+                                        <a href="#" name="metode_E2_name" data-metode_E2_name="Model Chamis-a"
+                                            class="metode_E2">Model Chamis-a</a>
+                                        <a href="#" name="metode_E2_name" data-metode_E2_name="Model Halpin-Tsai"
+                                            class="metode_E2">Model Halpin-Tsai</a>
+                                        <a href="#" name="metode_E2_name"
+                                            data-metode_E2_name="Modifikovana teorija IROM"
+                                            class="metode_E2">Modifikovana teorija IROM</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="G12">
+
+                                <span>G<sub>12</sub></span>
+                                <input type="number" class="resenje" id="resenje_G12"> GPa
+                                <div id="strelica_G12"><i class="fa-solid fa-angle-down"></i></div>
+                                <i class="fa-regular fa-circle-question " id="upitnik_G12"></i>
+                                <div class="dropdown_metode_G12">
+                                    <div onclick="dropdown_function_G12()" class="dropbtn" id="selektovana_metoda_G12">
+                                    </div>
+                                    <div id="myDropdown_G12" class="dropdown-content">
+                                        <a href="#" name="metode_G12_name" data-metode_G12_name="Pravilo mešanja ROM"
+                                            class=" selected_G12 metode_G12">Pravilo mešanja ROM</a>
+                                        <a href="#" name="metode_G12_name" data-metode_G12_name="Model Hashin-Rozen"
+                                            class=" metode_G12">Model Hashin-Rozen</a>
+                                        <a href="#" name="metode_G12_name" data-metode_G12_name="Model Chamis-a"
+                                            class="metode_G12">Model Chamis-a</a>
+                                        <a href="#" name="metode_G12_name" data-metode_G12_name="Model Halpin-Tsai"
+                                            class="metode_G12">Model Halpin-Tsai</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="rho">
+                                <span class="rho">$$\rho$$</span>
+                                <input type="number" class="resenje" id="resenje_rho"> <span
+                                    id="jedinica_kg_mm3">$$\frac{\small{10}^{-6}kg}{mm^3}$$</span>
+                            </div>
+
+                            <div id="ni12">
+
+                                <span class="ni">$$\nu_{12}$$</span>
+                                <input type="number" class="resenje" id="resenje_ni12">
+                            </div>
+
+                            <div id="ni21">
+                                <span class="ni">$$\nu_{21}$$</span>
+                                <input type="number" class="resenje" id="resenje_ni21">
+                            </div>
+
+
+
+                        </div>
+
+                        <div id="cvrstoca">
+
+                            <div id="cvrstoca_title">
+                                Čvrstoća
+                            </div>
+
+                            <div id="F1T">
+                                <span>F<sub>1T</sub></span>
+                                <input type="number" class="resenje" id="resenje_F1T"> MPa
+                                <i class="fa-regular fa-circle-question " id="upitnik_F1T"></i>
+                                <div id="metode_F1T"> <span>Osnovni metod</span> </div>
+
+                            </div>
+                            <div id="F1C">
+                                <i class="fa-regular fa-circle-question " id="upitnik_F1C"></i>
+                                <span>F<sub>1C</sub></span>
+                                <input type="number" class="resenje" id="resenje_F1C"> MPa
+                                <div id="metode_F1C"> <span>Osnovni metod </span> </div>
+
+                            </div>
+                            <div id="F2T">
+                                <i class="fa-regular fa-circle-question " id="upitnik_F2T"></i>
+
+                                <span>F<sub>2T</sub></span>
+                                <div id="strelica_F2T"><i class="fa-solid fa-angle-down"></i></div>
+
+                                <input type="number" class="resenje" id="resenje_F2T"> MPa
+                                <div class="dropdown_metode_F2T">
+                                    <div onclick="dropdown_function_F2T()" class="dropbtn" id="selektovana_metoda_F2T">
+                                    </div>
+                                    <div id="myDropdown_F2T" class="dropdown-content">
+                                        <a href="#" name="metode_F2T_name" data-metode_F2T_name="Model Neilsen-a"
+                                            class="selected_F2T metode_F2T">Model Neilsen-a</a>
+                                        <a href="#" name="metode_F2T_name" data-metode_F2T_name="Model Barbera"
+                                            class="metode_F2T">Model Barbera</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="F2C"> <span>F<sub>2C</sub></span>
+                                <i class="fa-regular fa-circle-question " id="upitnik_F2C"></i>
+
+                                <input type="number" class="resenje" id="resenje_F2C"> MPa
+                                <div id="metode_F2C"> <span>Formula Weeton-a</span> </div>
+
+                            </div>
+                            <div id="F6">
+                                <i class="fa-regular fa-circle-question " id="upitnik_F6"></i>
+                                <span>F<sub>6</sub></span>
+                                <input type="number" class="resenje" id="resenje_F6"> MPa
+                                <div id="metode_F6"><span>Formula Stellbrink-a</span> </div>
+
+                            </div>
+                        </div>
+                        <div id="dugmad">
+                            <div id="izracunaj_dugme"><span id="izracunaj_span">IZRAČUNAJ</span></div>
+                            <div id="prikaz_baze">PRIKAZ BAZE</div>
+                        </div>
+                    </div>
+
+
+                    <div id="prikaz_baze_popup" class="flip-card-back2 hidden ">
+                        <div id="prikaz_baze_matrice_i_vlakna">
+                            <div id="baza_vlakna_display">
+                                <div id="vlakna_imena">
+                                </div>
+                                <div id="vlakna_osobine">
+
+                                    <div id="naziv_vlakna_baza" class="vlakna_osobine_prikaz_u_bazi">
+                                        <span id="naziv_span_vlakna"
+                                            class="naziv_velicine_span">Naziv</span><span><input type="text"
+                                                id="naziv_vlakna_bazaa"></span>
+                                    </div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi"> <span
+                                            class="naziv_velicine_span">E<sub>f1</sub></span><span><input
+                                                id="baza_input_Ef1" class="input_baza_vlakna" type="number"><span
+                                                class="jedinica_span">GPa</span>
+                                    </div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> </span><span
+                                            class="naziv_velicine_span">E<sub>f2</sub></span><input type="number"
+                                            id="baza_input_Ef2" class="input_baza_vlakna"></span><span
+                                            class="jedinica_span">GPa</span></div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">G<sub>f12</sub></span><span><input
+                                                class="input_baza_vlakna" id="baza_input_Gf12"
+                                                type="number"></span><span class="jedinica_span">GPa</span></div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">G<sub>f23</sub></span><span><input
+                                                class="input_baza_vlakna" id="baza_input_Gf23"
+                                                type="number"></span><span class="jedinica_span">GPa</span></div>
+
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">F<sub>fT</sub></span><span><input
+                                                class="input_baza_vlakna" id="baza_input_FfT_MPa"
+                                                type="number"></span><span class="jedinica_span">MPa</span>
+                                    </div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">F<sub>fC</sub></span><span><input
+                                                class="input_baza_vlakna" id="baza_input_FfC_MPa"
+                                                type="number"></span><span class="jedinica_span">MPa</span>
+                                    </div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">rho</span><span><input class="input_baza_vlakna"
+                                                id="baza_input_rho_f" type="number"></span><span
+                                            class="jedinica_span gustina_jedinica_">$$\frac{g}{cm^3}$$</span>
+                                    </div>
+
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">&epsilon;<sub>f1T</sub></span><span><input
+                                                id="baza_input_epsf1T" class="input_baza_vlakna"
+                                                type="number"></span><span class="jedinica_span">%</span>
+                                    </div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">&epsilon;<sub>f1C</sub></span><span><input
+                                                id="baza_input_epsf1C" class="input_baza_vlakna"
+                                                type="number"></span><span class="jedinica_span">%</span>
+                                    </div>
+
+                                    <div class="vlakna_osobine_prikaz_u_bazi "> <span class="naziv_velicine_span">
+                                            ni<sub>f12</sub></span><span><input class="input_baza_vlakna"
+                                                id="baza_input_nif12" type="number"></span><span
+                                            class="jedinica_span"></span></div>
+                                </div>
+                            </div>
+                            <div id="baza_matrice_display">
+                                <div id="matrice_imena">
+                                </div>
+                                <div id="matrice_osobine">
+
+                                    <div id="naziv_matrice_baza" class="matrice_osobine_prikaz_u_bazi">
+                                        <span id="naziv_span_matrice"
+                                            class="naziv_velicine_span">Naziv</span><span><input type="text"
+                                                id="naziv_matrice_bazaa"></span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi"> <span
+                                            class="naziv_velicine_span">E<sub>m</sub></span><span><input
+                                                id="baza_input_Em" class="input_baza_matrice" type="number"><span
+                                                class="jedinica_span_matrica">GPa</span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi "> </span><span
+                                            class="naziv_velicine_span">G<sub>m</sub></span><input type="number"
+                                            id="baza_input_Gm" class="input_baza_matrice"></span><span
+                                            class="jedinica_span_matrica">GPa</span></div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">F<sub>mT</sub></span><span><input
+                                                class="input_baza_matrice" id="baza_input_FmT"
+                                                type="number"></span><span class="jedinica_span_matrica">MPa</span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">F<sub>mC</sub></span><span><input
+                                                class="input_baza_matrice" id="baza_input_FmC"
+                                                type="number"></span><span class="jedinica_span_matrica">MPa</span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">F<sub>mS</sub></span><span><input
+                                                class="input_baza_matrice" id="baza_input_FmS"
+                                                type="number"></span><span class="jedinica_span_matrica">MPa</span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi"> <span
+                                            class="naziv_velicine_span">rho</span><span><input
+                                                class="input_baza_matrice" id="baza_input_rho_m"
+                                                type="number"></span><span
+                                            class="jedinica_span_matrica gustina_jedinica_">$$\frac{
+                                            g}{cm^3}$$</span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">&epsilon;<sub>mu</sub></span><span><input
+                                                id="baza_input_eps_mu" class="input_baza_matrice"
+                                                type="number"></span><span class="jedinica_span_matrica">%</span>
+                                    </div>
+
+                                    <div class="matrice_osobine_prikaz_u_bazi "> <span
+                                            class="naziv_velicine_span">ni<sub>m</sub></span><span><input
+                                                class="input_baza_matrice" id="baza_input_ni_m"
+                                                type="number"></span><span class="jedinica_span_matrica"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="dugmad2">
+
+                            <div id="dugme_obrisi_bazu_vlakana">OBRISI VLAKNA</div>
+                            <div id="dugme_vracanje_nazad">NAZAD</div>
+                            <div id="dugme_obrisi_bazu_matrica">OBRISI MATRICE</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </main>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/script_racunanje.js"></script>
+
+</body>
+
+</html>
